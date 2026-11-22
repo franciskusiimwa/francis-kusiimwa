@@ -110,6 +110,22 @@ body.filtering .lensable:not(.lit) { opacity: 0.14; filter: grayscale(1); }
 .who .side { display: grid; gap: 1em; align-content: end; font-size: 0.98rem; color: var(--grey); }
 .who .side p:last-child { color: var(--ink); font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.82rem; }
 
+
+/* ---------- Arc ---------- */
+.arc { padding-bottom: clamp(48px, 8vw, 96px); }
+.arc-k { color: var(--grey); display: block; margin-bottom: 14px; }
+.arc ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1.5px solid var(--line); border-left: 1.5px solid var(--line); }
+.arc li { border-right: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line); padding: clamp(18px, 2.4vw, 28px); display: flex; flex-direction: column; gap: 10px; position: relative; background: var(--paper); }
+.arc li + li::before { content: "→"; position: absolute; left: -0.62em; top: clamp(18px, 2.4vw, 28px); background: var(--paper); font-weight: 800; font-size: 1.1rem; line-height: 1; padding: 2px 0; }
+.arc .step { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; color: var(--grey); font-variant-numeric: tabular-nums; }
+.arc h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.12; }
+.arc p { font-size: 0.98rem; color: var(--grey); }
+.arc .ex { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--soft); font-size: 0.85rem; font-weight: 600; }
+@media (max-width: 760px) {
+  .arc ol { grid-template-columns: 1fr; }
+  .arc li + li::before { content: "↓"; left: clamp(18px, 2.4vw, 28px); top: -0.7em; padding: 0 4px; }
+}
+
 /* ---------- Principles bento ---------- */
 .bento { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0; border-top: 1.5px solid var(--line); border-left: 1.5px solid var(--line); }
 .card { border-right: 1.5px solid var(--line); border-bottom: 1.5px solid var(--line); padding: clamp(20px, 2.6vw, 32px); display: flex; flex-direction: column; gap: 14px; min-height: 260px; background: var(--paper); }
@@ -299,7 +315,7 @@ footer { background: var(--ink); color: var(--paper); padding-top: clamp(56px, 9
   <div class="hero-text">
   <h1 class="name" id="name">Francis<span class="row2">Kusiimwa</span></h1>
   <div class="hero-foot">
-    <p>I build things in Uganda: school programmes, software for small lenders, a driving school. I ask a lot of questions while I do it, usually the awkward ones first.</p>
+    <p>I started out designing how people learn. Now I build products and businesses in Uganda, and I'm most interested in the systems behind them, like how credit reaches people or how a programme runs in 825 schools. I ask a lot of questions, usually the awkward ones first.</p>
     <ul>
       <li><b>Full-time:</b> Product Lead, Educate! · 825 schools</li>
       <li><b>Co-founder</b>, IDM-B · $500k+ in loans tracked</li>
@@ -340,7 +356,7 @@ footer { background: var(--ink); color: var(--paper); padding-top: clamp(56px, 9
     <div class="shead"><h2>Who I am</h2><span class="kicker">01</span></div>
     <div class="who">
       <div class="who-main">
-        <p class="big">I'm curious about a lot of things, and I like going deep on each one. People talk about being T-shaped: one deep skill on a broad base. <b>I'm closer to a comb,</b> with several deep teeth, each one taken as close to expert level as I can get it.</p>
+        <p class="big"><b>I'm closer to comb-shaped than T-shaped:</b> several deep interests rather than one.</p>
         <p class="big">What ties them together is design. <b>A programme, a product, a lesson, a business:</b> I work out how the pieces fit, coach the people who will run it, then step back and let them run it while I think about where it goes next.</p>
       </div>
       <div class="side">
@@ -348,6 +364,14 @@ footer { background: var(--ink); color: var(--paper); padding-top: clamp(56px, 9
         <p>I question things by habit: the brief, the numbers, what everyone already agrees on, and my own conclusions.</p>
         <p class="time">My full-time job is leading product at Educate!. My ventures have their own teams running them day to day, and I set their product direction.</p>
       </div>
+    </div>
+    <div class="arc">
+      <span class="kicker arc-k">How my work has grown</span>
+      <ol>
+        <li class="lensable" data-lens="product"><span class="step">01</span><h3>Designing how people learn</h3><p>How do people learn and grow?</p><span class="ex">Fundi Bots · E!BA</span></li>
+        <li class="lensable" data-lens="product hardware ai"><span class="step">02</span><h3>Designing products that solve problems</h3><p>What do people actually need, and will they use it?</p><span class="ex">Mokachi Labs</span></li>
+        <li class="lensable" data-lens="operations investing economics"><span class="step">03</span><h3>Building businesses and the systems behind them</h3><p>What makes something work, grow and last?</p><span class="ex">EXP · IDM-B · Platinum</span></li>
+      </ol>
     </div>
 
     <div class="shead"><h2>How I think</h2><span class="kicker">02 · Seven rules I keep</span></div>
@@ -400,16 +424,16 @@ footer { background: var(--ink); color: var(--paper); padding-top: clamp(56px, 9
     <div class="qs-head">
       <div>
         <span class="kicker">03</span>
-        <h2 id="qs-h">Questions I keep asking</h2>
+        <h2 id="qs-h">Things I'm still figuring out</h2>
       </div>
       <p class="note">I don't have settled answers to most of these. They keep coming up, whatever I'm working on.</p>
     </div>
     <ol class="qgrid">
-      <li class="lensable q-main" data-lens="product marketing operations investing"><div class="qmeta"><span>01</span><span>The one I ask most</span></div><p>How do we build excellent businesses that truly care about what customers need, and still make money?</p><p class="ctx">Most businesses around me don't truly solve the customer's problem. The food is off, the pharmacy layout makes no sense, or the owner who finally gets customers turns difficult. Most of the fixes don't need a reinvention. And where the care is there, the economics are often off. I want to get both right.</p></li>
+      <li class="lensable q-main" data-lens="product marketing operations investing"><div class="qmeta"><span>01</span><span>The one I ask most</span></div><p>How do we build excellent businesses that truly care about what customers need, and still make money?</p><p class="ctx">Too many businesses around me don't truly solve the customer's problem. The food is off, the pharmacy layout makes no sense, or the owner who finally gets customers turns difficult. Most of the fixes don't need a reinvention. And where the care is there, the economics are often off. I want to get both right.</p></li>
       <li class="lensable" data-lens="product economics operations"><div class="qmeta"><span>02</span><span>Root causes</span></div><p>What's the reason behind the reason?</p><p class="ctx">If I can see a gap in the market, I'm probably not the first. There's usually a reason it's still open, and it's often political or social, not only commercial. I want to understand that reason before I try to fill it.</p></li>
       <li class="lensable" data-lens="marketing economics"><div class="qmeta"><span>03</span><span>Motives</span></div><p>What really drives people to do what they do?</p><p class="ctx">What people say and why they act are often different things. Understanding the real motive changes how you design, sell and lead.</p></li>
       <li class="lensable" data-lens="economics operations"><div class="qmeta"><span>04</span><span>Nonprofits</span></div><p>How can a nonprofit pay its own way without losing the vision it started with?</p><p class="ctx">Sustainability has to be designed in from the start. I think impact only lasts when the bottom line is solid.</p></li>
-      <li class="lensable" data-lens="economics investing operations"><div class="qmeta"><span>05</span><span>Africa</span></div><p>What would it take for businesses in or from Africa to truly compete globally?</p><p class="ctx">I don't like "built for Africa" as a goal. Too often it becomes an excuse for a lower bar, because mediocre service gets absorbed here in a way it wouldn't elsewhere. I'd rather build businesses good enough to scale anywhere, and localise along the way.</p></li>
+      <li class="lensable" data-lens="economics investing operations"><div class="qmeta"><span>05</span><span>Africa</span></div><p>What would it take for businesses in or from Africa to truly compete globally?</p><p class="ctx">I don't like "built for Africa" as a goal. Too often it becomes an excuse for a lower bar. I'd rather build to a standard that would hold anywhere, and localise along the way.</p></li>
     </ol>
   </section>
 
